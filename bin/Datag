@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+# -*- ruby -*-
+#
+
+require 'Datag'
+require 'trollop'
+
+opts = Trollop::options do
+
+  opt :reverse, "Reverse the output of :list. Ignored for all other commands.", :default => false
+  
+end
+
+if ARGV.first == "list" && opts[:reverse]
+  puts Datag.send(*ARGV).reverse
+else
+  puts Datag.send(*ARGV)
+end
