@@ -59,6 +59,8 @@ def reset_tmp
 
 end # === def reset_tmp
 
+reset_tmp
+
 # ======== Include the tests.
 if ARGV.size > 1 && ARGV[1, ARGV.size - 1].detect { |a| File.exists?(a) }
   # Do nothing. Bacon grabs the file.
