@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry'
   
   # Specify any dependencies here; for example:
-  s.add_runtime_dependency 'Exit_Zero'
+  s.add_runtime_dependency 'Exit_0'
   s.add_runtime_dependency 'Split_Lines'
   s.add_runtime_dependency 'trollop'
 end

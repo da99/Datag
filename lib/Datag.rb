@@ -1,5 +1,5 @@
 require 'Datag/version'
-require 'Exit_Zero'
+require 'Exit_0'
 require 'Split_Lines'
 
 class Datag
