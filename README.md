@@ -33,7 +33,7 @@ Usage: Shell
     
     Datag first     # oldest: v1.0.0
     Datag last      # newest: v9.0.0
-
+    
     Datag next
     Datag previous
     
@@ -42,6 +42,14 @@ Usage: Shell
     git tag $( Datag bump_patch )
     git tag $( Datag bump_minor )
     git tag $( Datag bump_major )
+
+    # Don't like new lines in the output?
+    # Change the delimiter like so:
+    
+    Datag --delimiter=", " list  
+    Datag -d ", " list           
+    git push origin $( Datag -d " " list )
+
 
 Run Tests
 ---------

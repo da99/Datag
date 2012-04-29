@@ -52,4 +52,11 @@ describe "Datag bin" do
     }
   end
 
+  it "prints a space delimited string when passed: --delimiter=' '" do
+    chdir('Me') {
+      Exit_0("bundle exec Datag list --delimiter=' '")
+      .raw_out.should == Me_List.join(" ") + "\n"
+    }
+  end
+
 end # === Datag bin

@@ -8,11 +8,19 @@ require 'trollop'
 opts = Trollop::options do
 
   opt :reverse, "Reverse the output of :list. Ignored for all other commands.", :default => false
+  opt :delimiter, "If not set, it will use a new line.", :default => nil, :type=>String
   
 end
 
-if ARGV.first == "list" && opts[:reverse]
-  puts Datag.send(*ARGV).reverse
+results = if ARGV.first == "list" && opts[:reverse]
+            Datag.send(*ARGV).reverse
+          else
+            Datag.send(*ARGV)
+          end
+
+case results
+when Array
+  puts results.join(opts[:delimiter] || "\n")
 else
-  puts Datag.send(*ARGV)
+  puts results
 end
